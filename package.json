@@ -1,0 +1,8 @@
+{
+	"scripts": {
+		"sass": "sass --no-source-map src"
+	},
+  "dependencies": {
+    "sass": "1.34.0"
+  }
+}

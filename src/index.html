@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Carousel demo page</title>
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+		<link rel="stylesheet" type="text/css" href="./css/carousel.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/styles.css"/>
+		<script type="text/javascript" src="./js/carousel.js"></script>
+	</head>
+	<body>
+		<h1>Carousel demo page</h1>
+		<div id="my-carousel"></div>
+		<div id="my-carousel2"></div>
+		<script type="text/javascript">
+				var options1 = {
+					container: "my-carousel",
+					title: "Fresh and just uploaded content",
+					subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor icnididunt ut labore et dolore magna aliqua",
+					fetchCards: function(chunkSize) {
+						return {
+							image: "https://en.wikipedia.org/static/images/project-logos/enwiki.png",
+							type: "eleraning",
+							duration: 3600,
+							title: "Welcome to Effective Time Managment",
+							cardinality: "single"
+						};
+					}
+				};
+				var carousel1 = new Carousel(options1);
+
+				var options2 = {
+					container: "my-carousel2",
+					title: "Another carouse instance title",
+					subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor icnididunt ut labore et dolore magna aliqua",
+					fetchCards: function(chunkSize) {
+
+					}
+				};
+				var carousel2 = new Carousel(options2);
+		</script>
+	</body>
+</html>
