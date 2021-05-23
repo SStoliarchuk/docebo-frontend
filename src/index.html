@@ -7,6 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="./css/carousel.css"/>
 		<link rel="stylesheet" type="text/css" href="./css/styles.css"/>
 		<script type="text/javascript" src="./js/carousel.js"></script>
+		<script type="text/javascript" src="./js/carousel-card.js"></script>
 	</head>
 	<body>
 		<h1>Carousel demo page</h1>
@@ -18,13 +19,13 @@
 					title: "Fresh and just uploaded content",
 					subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor icnididunt ut labore et dolore magna aliqua",
 					fetchCards: function(chunkSize) {
-						return {
+						return [{
 							image: "https://en.wikipedia.org/static/images/project-logos/enwiki.png",
 							type: "eleraning",
 							duration: 3600,
 							title: "Welcome to Effective Time Managment",
 							cardinality: "single"
-						};
+						}];
 					}
 				};
 				var carousel1 = new Carousel(options1);
@@ -34,10 +35,42 @@
 					title: "Another carouse instance title",
 					subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor icnididunt ut labore et dolore magna aliqua",
 					fetchCards: function(chunkSize) {
-
+						return [];
 					}
 				};
 				var carousel2 = new Carousel(options2);
 		</script>
+
+		<div id="my-carousel3"></div>
+		<script type="text/javascript">
+			var carousel3 = new Carousel({
+				container: "my-carousel3",
+				title: "Fresh and just uploaded content",
+				subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor icnididunt ut labore et dolore magna aliqua",
+				fetchCards: async function(chunkSize) {
+					// simulate 400 ms delay
+					await new Promise(r => setTimeout(r, 10000));
+
+					return [
+						{
+							image: "https://en.wikipedia.org/static/images/project-logos/enwiki.png",
+							type: "video",
+							duration: 77,
+							title: "Welcome to Effective Time Managment",
+							cardinality: "single"
+						},
+						{
+							image: "https://en.wikipedia.org/static/images/project-logos/enwiki.png",
+							type: "elearning",
+							duration: 8000,
+							title: "Welcome to Effective Time Managment",
+							cardinality: "collection"
+						},
+					];
+				}
+			});
+
+		</script>
+		
 	</body>
 </html>
