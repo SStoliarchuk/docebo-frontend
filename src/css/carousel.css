@@ -13,19 +13,48 @@
 .carousel-container .carousel-title > div {
   margin-left: 0.5em;
 }
-.carousel-container .carousel-card-container {
+.carousel-container .carousel-content {
+  position: relative;
+}
+.carousel-container .carousel-content > button {
+  position: absolute;
+  height: calc(var(--card-height) + 4em);
+  max-height: 100%;
+  width: 4em;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  z-index: 10;
+}
+.carousel-container .carousel-content > button:first-child {
+  left: 0;
+}
+.carousel-container .carousel-content > button:nth-child(2) {
+  right: 0;
+}
+.carousel-container .carousel-content .carousel-card-container::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+.carousel-container .carousel-content .carousel-card-container::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+.carousel-container .carousel-content .carousel-card-container {
   margin-top: 1em;
   padding-bottom: 2em;
   overflow: auto;
   display: flex;
+  scrollbar-width: none;
 }
-.carousel-container .carousel-card-container .card-container {
+.carousel-container .carousel-content .carousel-card-container .card-container {
   position: relative;
 }
-.carousel-container .carousel-card-container .card-container:not(:first-child) {
+.carousel-container .carousel-content .carousel-card-container .card-container:not(:first-child) {
   margin-left: 2em;
 }
-.carousel-container .carousel-card-container .card {
+.carousel-container .carousel-content .carousel-card-container .card {
   cursor: pointer;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
   background-color: white;
@@ -33,61 +62,61 @@
   min-width: var(--card-width);
   height: var(--card-height);
 }
-.carousel-container .carousel-card-container .card .img-container {
+.carousel-container .carousel-content .carousel-card-container .card .img-container {
   width: 100%;
   height: 9em;
   position: relative;
 }
-.carousel-container .carousel-card-container .card .img-container img {
+.carousel-container .carousel-content .carousel-card-container .card .img-container img {
   object-fit: cover;
   height: 100%;
   width: 100%;
 }
-.carousel-container .carousel-card-container .card .img-container .img-text {
+.carousel-container .carousel-content .carousel-card-container .card .img-container .img-text {
   position: absolute;
   width: 100%;
   bottom: 0;
   display: flex;
   justify-content: space-between;
 }
-.carousel-container .carousel-card-container .card .img-container .img-text span {
+.carousel-container .carousel-content .carousel-card-container .card .img-container .img-text span {
   display: inline-block;
   padding: 0.2em 0.5em;
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
 }
-.carousel-container .carousel-card-container .card .img-container .img-text span:first-child {
+.carousel-container .carousel-content .carousel-card-container .card .img-container .img-text span:first-child {
   text-transform: uppercase;
 }
-.carousel-container .carousel-card-container .card .card-text {
+.carousel-container .carousel-content .carousel-card-container .card .card-text {
   padding: 1em;
 }
-.carousel-container .carousel-card-container .card .card-text h3 {
+.carousel-container .carousel-content .carousel-card-container .card .card-text h3 {
   color: #2486f7;
 }
-.carousel-container .carousel-card-container .card-type-placeholder .img-container {
+.carousel-container .carousel-content .carousel-card-container .card-type-placeholder .img-container {
   animation: placeholder-pulse 2s infinite;
 }
-.carousel-container .carousel-card-container .card-type-placeholder .card-text div:first-child {
+.carousel-container .carousel-content .carousel-card-container .card-type-placeholder .card-text div:first-child {
   animation: placeholder-pulse 2s infinite;
   height: 1em;
   width: 100%;
 }
-.carousel-container .carousel-card-container .card-type-placeholder .card-text div:nth-child(2) {
+.carousel-container .carousel-content .carousel-card-container .card-type-placeholder .card-text div:nth-child(2) {
   animation: placeholder-pulse 2s infinite;
   height: 1em;
   width: 80%;
   margin-top: 0.5em;
 }
-.carousel-container .carousel-card-container .card-collection-stack {
+.carousel-container .carousel-content .carousel-card-container .card-collection-stack {
   position: absolute;
   z-index: -1;
 }
-.carousel-container .carousel-card-container .card-collection-stack:nth-child(1) {
+.carousel-container .carousel-content .carousel-card-container .card-collection-stack:nth-child(1) {
   bottom: -2em;
   transform: scale(0.9);
 }
-.carousel-container .carousel-card-container .card-collection-stack:nth-child(2) {
+.carousel-container .carousel-content .carousel-card-container .card-collection-stack:nth-child(2) {
   bottom: -1em;
   transform: scale(0.95);
 }
