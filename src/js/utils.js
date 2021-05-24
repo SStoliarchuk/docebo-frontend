@@ -23,3 +23,6 @@ class Utils {
 
 
 }
+
+// for quick testing
+typeof module !== 'undefined' && (module.exports = Utils);
